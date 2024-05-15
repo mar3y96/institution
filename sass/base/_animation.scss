@@ -1,0 +1,20 @@
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    } 
+
+    100% {
+        transform: translateX(-250%);
+    }
+}
+@if $site-language==Arabic {
+    @keyframes ticker {
+        0% {
+            transform: translateX(-250%);
+        } 
+    
+        100% {
+            transform: translateX(0);
+        }
+    }
+}

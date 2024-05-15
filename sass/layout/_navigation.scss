@@ -1,0 +1,197 @@
+/* Start Navbar */
+.navbar {
+    padding: 0 1rem;
+    position: relative;
+
+}
+
+.navbar-brand {
+    &__image {
+        width: 33rem;
+    }
+}
+
+.navbar-light {
+    .navbar-nav {
+        position: relative;
+
+        .nav-item {
+            display: block;
+            padding: 23px 0;
+        }
+
+        .nav-link {
+            font-size: 16px;
+            text-transform: capitalize;
+            color: $color-primary-1-dark;
+            font-weight: bold;
+            transition: all .2s;
+
+            &:hover {
+                color: $color-primary-2-dark;
+            }
+
+            &.last-child:after {
+                display: none;
+            }
+        }
+
+        .nav-hover-content {
+            ul {
+                background-color: $color-white;
+                z-index: 9;
+                border-top: 4px solid #ec640f;
+                position: absolute;
+                list-style: none;
+            }
+
+            a {
+                color: $color-primary-1-dark;
+                text-transform: capitalize;
+                font-weight: bold;
+                font-size: 1.5rem;
+                text-decoration: none;
+                transition: all .2s;
+
+                &:hover {
+                    color: $color-primary-2-dark;
+                }
+            }  
+
+            li { 
+                padding: 10px;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid #f1f1f1;
+                }
+            }
+
+
+            .category-content {
+                top: 8.3rem;
+                right: 50%;
+                min-width: 20rem;
+                display: none;
+                transition: all .2s;
+            }
+            .certification-content {
+                top: 8.3rem;
+                right: 24%;
+                min-width: 20rem;
+                display: none;
+                transition: all .2s;
+            }
+
+            .media-content {
+                top: 8.3rem;
+                right: -9.5%;
+                min-width: 22rem;
+                display: none;
+                transition: all .2s;
+            }
+        }
+
+
+        .nav__category:hover .category-content{
+            display: block;
+        }
+        .nav__certification:hover .certification-content {
+            display: block;
+        }
+
+        .nav__media:hover .media-content {
+            display: block;
+        }
+
+    }
+
+
+
+    .active>.nav-link {
+        color: $color-primary-2-dark !important
+    }
+}
+
+
+.navbar-nav>li>a:after {
+    content: "|";
+    padding: 7px;
+    color: #dfdfdf;
+    font-size: 1em;
+}
+
+@if $site-language==Arabic {
+    .navbar-light .navbar-nav .nav-hover-content li {
+        text-align: right !important
+    }
+
+    .navbar-light .navbar-nav .nav-hover-content .category-content {
+        left: 55%;
+        right: auto;
+    }
+    
+    .navbar-light .navbar-nav .nav-hover-content .media-content {
+        right: 11.5%;
+    }
+
+    .navbar-light .navbar-nav .nav-hover-content .certification-content {
+        right: 39%;
+    }
+
+    .navbar-light .navbar-nav .nav-hover-content .media-content {
+        left: 9%;
+        right: initial;
+    }
+
+    .navbar .ml-auto {
+        margin-right: auto !important;
+        margin-left: initial !important;
+    }
+
+    .navbar {
+        direction: rtl;
+    }
+}
+
+@media(min-width: 1206px) {
+    .navbar-expand-lg {
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+}
+
+@media(max-width:991px) {
+    .navbar-nav>li>a:after {
+        display: none
+    }
+
+    .navbar-light {
+        .navbar-nav {
+            .nav-link {
+                text-align: center;
+                margin-bottom: .5rem;
+            }
+        }
+    }
+    .navbar-light .navbar-nav .nav-item {
+        padding: 7px 0;
+    }
+
+    .nav-hover-content {
+        display: none;
+    }
+}
+
+@media(max-width:767px) {
+    .navbar-brand {
+        &__image {
+            width: 20rem;
+        }
+    }
+}
+
+/* End Navbar */

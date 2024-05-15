@@ -1,0 +1,113 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-black-2;
+}
+
+.heading {
+    &-primary {
+        font-size: 4rem;
+        color: #333;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+
+    &-secondary {
+        font-size: 3rem;
+        color: $color-primary-2-dark;
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+
+
+    &-tertiary {
+        color: #1c386a;
+        font-weight: bold;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-size: 20px
+    }
+
+    &--side::before {
+        content: '';
+        display: table;
+        width: 8rem;
+        height: 1rem;
+        margin-bottom: 2rem;
+        background-color: $color-primary-1-dark;
+        border-radius: 2px;
+    }
+
+    &--center::before {
+        content: '';
+        display: block;
+        width: 8rem;
+        height: 1rem;
+        margin: 0 auto 2rem;
+        background-color: $color-primary-1-dark;
+        border-radius: 2px;
+    }
+
+    &--light::before {
+        content: '';
+        display: table;
+        width: 5rem;
+        height: .7rem;
+        margin-bottom: 2rem;
+        background-color: $color-primary-1-dark;
+        border-radius: 2px;
+    }
+}
+
+@if $site-language==Arabic {
+    .heading {
+        &-primary {
+            letter-spacing: 0;
+        }
+    }
+}
+
+    @media(max-width:767px) {
+        .heading {
+            &-primary {
+                font-size: 3rem;
+            }
+
+            &--side::before {
+                content: '';
+                width: 6rem;
+            }
+
+            &--center::before {
+                content: '';
+                width: 6rem;
+            }
+        }
+    }
+
+    @if $site-language==Arabic {
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .heading {
+            &-primary {
+                direction: rtl;
+            }
+
+            &-secondary {
+                direction: rtl;
+            }
+
+            &-tertiary {
+                direction: rtl;
+            }
+
+            &--side::before {
+                direction: rtl;
+            }
+        }
+    }

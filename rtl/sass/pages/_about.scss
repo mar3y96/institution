@@ -1,0 +1,95 @@
+//  start about us intro 
+.about {
+    &__intro {
+        padding-bottom: 10rem;
+        padding-top: 10rem;
+
+        .heading-primary {
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+        }
+        p {
+            line-height: 1.7;
+            font-size: inherit;
+            font-weight: bold;
+            width: 96%;
+            text-align: center;
+            margin: 2rem auto;
+            color: $color-grey-dark-3;
+        }
+    }
+
+    // start our statement
+    &__our-statement {
+        padding-bottom: 10rem;
+        padding-top: 10rem;
+        background-image: linear-gradient(to right bottom,
+                rgba($color-primary-2-light, .8),
+                rgba($color-primary-2-dark, .8)),
+            url(../img/about04.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+
+        .heading-primary {
+            color: $color-primary-1-dark
+        }
+
+    }
+
+    // start feature
+    &__feature {
+        padding-bottom: 4rem;
+        padding-top: 6rem;
+        background-image: linear-gradient(to right bottom,
+                rgba($color-primary-1-dark, .9),
+                rgba($color-primary-1-dark, .9)),
+            url(../img/about03.jpg);
+        background-attachment: fixed;
+        color: $color-white !important;
+
+        li {
+            margin-left: 1.5rem;
+            font-size: 2rem;
+            line-height: 1.8;
+
+            &:last-child {
+                margin-bottom: 3rem
+            }
+        }
+
+        img {
+            border-radius: 2px;
+        }
+
+        .heading--light::before {
+            background-color: $color-primary-2-dark !important
+        }
+    }
+}
+
+@if $site-language==Arabic {
+    .about {
+        &__feature {
+            li {
+                margin-left: 0;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+@media(max-width:767px) {
+    .about {
+        &__intro {
+            p {
+                width: 100%
+            }
+        }
+        &__feature .heading--light {
+            margin-bottom: 2rem;
+            &::before {
+                margin-bottom: 1rem
+            }
+        }
+    }
+}
